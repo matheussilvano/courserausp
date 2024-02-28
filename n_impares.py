@@ -1,4 +1,4 @@
-n = int(input("Digite um número inteiro positivo: "))
+n = int(input("Digite o valor de n: "))
 
 contador = 0
 numero = 1
