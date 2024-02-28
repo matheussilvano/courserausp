@@ -7,4 +7,4 @@ for digito in numero:
     # Converte o dígito de string para inteiro e adiciona à soma
     soma_digitos += int(digito)
 
-print("A soma dos dígitos é:", soma_digitos)
+print(soma_digitos)
