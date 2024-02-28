@@ -1,7 +1,6 @@
 import re
 
 def le_assinatura():
-    '''A funcao le os valores dos tracos linguisticos do modelo e devolve uma assinatura a ser comparada com os textos fornecidos'''
     print("Bem-vindo ao detector automático de COH-PIAH.")
 
     wal = float(input("Entre o tamanho medio de palavra:"))
@@ -25,22 +24,18 @@ def le_textos():
     return textos
 
 def separa_sentencas(texto):
-    '''A funcao recebe um texto e devolve uma lista das sentencas dentro do texto'''
     sentencas = re.split(r'[.!?]+', texto)
     if sentencas[-1] == '':
         del sentencas[-1]
     return sentencas
 
 def separa_frases(sentenca):
-    '''A funcao recebe uma sentenca e devolve uma lista das frases dentro da sentenca'''
     return re.split(r'[,:;]+', sentenca)
 
 def separa_palavras(frase):
-    '''A funcao recebe uma frase e devolve uma lista das palavras dentro da frase'''
     return frase.split()
 
 def n_palavras_unicas(lista_palavras):
-    '''Essa funcao recebe uma lista de palavras e devolve o numero de palavras que aparecem uma unica vez'''
     freq = dict()
     unicas = 0
     for palavra in lista_palavras:
@@ -56,7 +51,6 @@ def n_palavras_unicas(lista_palavras):
     return unicas
 
 def n_palavras_diferentes(lista_palavras):
-    '''Essa funcao recebe uma lista de palavras e devolve o numero de palavras diferentes utilizadas'''
     freq = dict()
     for palavra in lista_palavras:
         p = palavra.lower()
@@ -68,7 +62,6 @@ def n_palavras_diferentes(lista_palavras):
     return len(freq)
 
 def compara_assinatura(as_a, as_b):
-    '''IMPLEMENTAR. Essa funcao recebe duas assinaturas de texto e deve devolver o grau de similaridade nas assinaturas.'''
     soma_temp = 0
     for i in range(0,6):
         soma_temp = soma_temp + (abs(as_a[i] - as_b[i]))
@@ -76,7 +69,6 @@ def compara_assinatura(as_a, as_b):
     return soma_temp / 6
 
 def calcula_assinatura(texto):
-    '''IMPLEMENTAR. Essa funcao recebe um texto e deve devolver a assinatura do texto.'''
     sentencas = separa_sentencas(texto)
     frases = []
     palavras = []
@@ -118,7 +110,6 @@ def calcula_assinatura(texto):
 
 
 def avalia_textos(textos, ass_cp):
-    '''IMPLEMENTAR. Essa funcao recebe uma lista de textos e deve devolver o numero (1 a n) do texto com maior probabilidade de ter sido infectado por COH-PIAH.'''
     inf = []
     
     for texto in textos:
